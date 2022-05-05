@@ -1,0 +1,10 @@
+import { BaseRepository } from "@bootstrap/Mongo/utilities/BaseMongoRepository";
+import { {{properCase entityName}}Create, {{properCase entityName}}Edit, {{properCase entityName}}Entity } from "@domain/{{lowerCase entityName}}/{{lowerCase entityName}}.entity";
+import { {{properCase entityName}}Model } from "../schemas/{{lowerCase entityName}}.schema";
+
+
+export class {{properCase entityName}}Respository extends BaseRepository<{{properCase entityName}}Create, {{properCase entityName}}Edit, {{properCase entityName}}Entity>{
+    constructor() {
+        super({{properCase entityName}}Model);
+    }
+}

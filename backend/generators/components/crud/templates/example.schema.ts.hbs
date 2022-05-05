@@ -1,0 +1,18 @@
+import { {{properCase entityName}}Entity } from "@domain/{{lowerCase entityName}}/{{lowerCase entityName}}.entity";
+import { Schema, model } from "mongoose";
+
+
+const schema = new Schema(
+    {
+        title: {
+            type: String,
+        }
+    },
+    {
+        id: false,
+        versionKey: false
+    }
+);
+
+
+export const {{properCase entityName}}Model = model<{{properCase entityName}}Entity>("{{properCase entityName}}", schema);

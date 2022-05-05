@@ -1,0 +1,16 @@
+import { JsonController, Post, Body } from "routing-controllers";
+import { Service } from "typedi";
+
+import { {{properCase entityName}}Interactor } from '@application/{{lowerCase entityName}}.interactor';
+import { Create{{properCase entityName}}DTO } from "@domain/{{lowerCase entityName}}/{{lowerCase entityName}}.dto";
+
+@Service()
+@JsonController("/{{lowerCase entityName}}")
+export class {{properCase entityName}}Controller {
+    constructor(private {{lowerCase entityName}}Interactor: {{properCase entityName}}Interactor) { };
+
+    @Post("/create")
+    async create{{properCase entityName}}(@Body() entry: Create{{properCase entityName}}DTO) {
+        return await this.{{lowerCase entityName}}Interactor.create{{properCase entityName}}(entry);
+    }
+}

@@ -1,0 +1,7 @@
+import { IsNotEmpty } from "class-validator";
+import { {{lowerCase entityName }}DtoMessages } from "./{{lowerCase entityName}}.dto.messages";
+
+export class Create{{properCase entityName }}DTO {
+    @IsNotEmpty({ message: {{ lowerCase entityName }}DtoMessages.titleRequired })
+    title: string; 
+}

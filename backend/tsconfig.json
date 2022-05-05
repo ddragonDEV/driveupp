@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",                                     
+    "experimentalDecorators": true,                   
+    "emitDecoratorMetadata": true,                    
+    "module": "commonjs",                                
+    "baseUrl": "./",                                  
+     "paths": {
+       "@bootstrap/*":["bootstrap/*"],
+       "@config/*": ["src/config/*"],
+       "@modules/*":["src/modules/*"],
+       "@controllers/*":["src/core/infraestructure/controllers/*"],
+       "@events/*":["src/core/infraestructure/events/*"],
+       "@application/*":["src/core/application/*"],
+       "@domain/*":["src/core/domain/*"],
+       "@framework/*":["src/core/framework/*"]
+     },                                      
+     "types": ["node"],                                      
+     "outDir": "dist",                                   
+    "allowSyntheticDefaultImports": true,             
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,            
+  },
+  "include":["index.ts","bootstrap/**/*.**", "src/**/*.**"],
+  "exclude": ["node_modules"],
+}

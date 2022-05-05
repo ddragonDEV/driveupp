@@ -1,0 +1,27 @@
+import { {{properCase entityName}}Adapter } from "@domain/{{lowerCase entityName}}/{{lowerCase entityName}}.adapter";
+import { Service, Inject } from "typedi";
+
+@Service()
+export class {{properCase entityName}}Interactor {
+    constructor(@Inject("{{properCase entityName}}Adapter") private {{lowerCase entityName}}Adapter: {{properCase entityName}}Adapter) { };
+
+    async create{{properCase entityName}}(entry: any) {
+        return await this.{{lowerCase entityName}}Adapter.create(entry);
+    };
+
+    async update{{properCase entityName}}(id: string, entry: any) {
+        return await this.{{lowerCase entityName}}Adapter.update(id, entry);
+    };
+
+    async get{{properCase entityName}}ById(id: string) {
+        return await this.{{lowerCase entityName}}Adapter.getById(id);
+    };
+
+    async getAll{{properCase entityName}}s() {
+        return await this.{{lowerCase entityName}}Adapter.getAll();
+    };
+
+    async delete{{properCase entityName}}(id: string) {
+        return await this.{{lowerCase entityName}}Adapter.delete(id);
+    };
+}
